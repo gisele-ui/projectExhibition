@@ -67,7 +67,8 @@
   <div class=" w-75 p-5">
         <div class="form-holder shadow p-5 bg-light rounded ">
             <h1 class="text-center">Showcase <span class="text-primary">your</span> project</h1>
-            <form class="form p-5" method="POST">
+           
+            <form method="POST" action="<?=base_url('image-upload')?>" enctype="multipart/form-data">
 
                 <div class="mb-3">
                     <label for="project-title">Project title</label>
@@ -118,7 +119,8 @@
                     <p>Ineza jost</p>
                 </div> <div class="trending-content">
                     <p>Ineza jost</p>
-                </div> <div class="trending-content">
+                </div> 
+                <div class="trending-content">
                     <p>Ineza jost</p>
                 </div>
             </div>
