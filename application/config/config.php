@@ -36,7 +36,7 @@ $config['base_url'] = '';
 |
 */
 $config['index_page'] = 'index.php';
-
+$config['fonts_path']= "./system/fonts/font/";
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL
