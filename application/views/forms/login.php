@@ -47,7 +47,7 @@
 			position: relative;
 			right: 70px;
 			margin: 40px auto;
-			background-image: url("<?= base_url() ?>assets/images/Projections-amico.png");
+			background-image: url("<?= base_url()?>assets/images/Projections-amico.png");
 			width: 40%;
 			height: 500px;
 			background-repeat: no-repeat;
@@ -68,7 +68,7 @@
 	<div class="form-cont col-xl-4 float-start">
 		<h3 class="fw-bold fst-italic text-center my-4 mb-5">Sign In</h3>
 
-		<form action="<?= base_url("login") ?>" method="POST">
+		<form action="<?= base_url("index.php/forms/login/auth") ?>" method="POST">
 		<?php if($message) { ?>
    <div class="alert alert-danger text-danger">
 	   <?= $message ?>
@@ -97,11 +97,11 @@
 			</div>
 
 			<div class="sub-btn mb-3">
-				<button class="btn btn-primary w-100 shadow-none">Sign in</button>
+				<button class="btn btn-primary w-100 shadow-none" type="submit">Sign in</button>
 			</div>
 
 			<div class="haveanncount">
-				<p class="text-center">Don't have an account? <a href="register" class="text-decoration-none">Register</a></p>
+				<p class="text-center">Don't have an account? <a href="<?=base_url('index.php/forms/register/register') ?>" class="text-decoration-none">Register</a></p>
 			</div>
 
 		</form>
