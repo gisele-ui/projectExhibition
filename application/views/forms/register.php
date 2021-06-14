@@ -68,7 +68,7 @@
 	<div class="form-cont col-xl-4 float-end">
 		<h3 class="fw-bold fst-italic text-center my-4 mb-5">Sign Up</h3>
 
-		<form action="<?= base_url("register") ?>" method="POST">
+		<form action="<?= base_url("index.php/forms/register/saveUser") ?>" method="POST">
 
 			<div class="form-floating input-group">
 				<span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
@@ -140,7 +140,7 @@
 			</div>
 
 			<div class="haveanncount mt-2">
-				<p class="text-center">Already have an account? <a href="login" class="text-decoration-none">Sign in</a></p>
+				<p class="text-center">Already have an account? <a href="<?=base_url('index.php/forms/login/login')?>" class="text-decoration-none">Sign in</a></p>
 			</div>
 
 		</form>

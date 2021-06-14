@@ -8,7 +8,7 @@ class Register extends CI_Controller {
 		parent:: __construct();
         $this->load->helper('form');
         $this->load->helper('url');
-		$this->load->model("userModel");
+		$this->load->model("UserModel");
 	}
 
 
@@ -18,7 +18,7 @@ class Register extends CI_Controller {
 		$result = $info->getData();
 		$results['result'] = $result;
 
-		$this->load->view('forms/Register', $results);
+		$this->load->view('forms/register', $results);
 	}
 
 	
@@ -36,7 +36,7 @@ class Register extends CI_Controller {
 		$code = bin2hex(random_bytes(6));
 		$hashedemail  =hash("SHA512", $this->input->post("email"));
 		$identity = $hashedemail."-".$code;
-		$link = "http://localhost/projectExh/exhibition/verify/$identity";
+		$link = "http://localhost/exhibition/index.php/forms/register/verify/$identity";
         $subject = "Email verification link";
         $message = "<div><p>Hi $username, click to this link to verify your email and get started.</p><a href='$link'>$link</a></div>";
 		
@@ -82,8 +82,12 @@ class Register extends CI_Controller {
 	    $isValid = $check->checkLink($link);
 		
 		if($isValid){
-        $_SESSION['userId'] = $isValid[0]->userId;
-		redirect("home");
+			$newdata = array(
+				'userId' => $isValid[0]->userId,
+				'classId' => $isValid[0] ->classId
+			);
+		$this->session->set_userdata($newdata);
+		redirect("discover");
 		}else{
          echo "Page not found";
 		}

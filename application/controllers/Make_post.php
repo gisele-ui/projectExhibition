@@ -6,15 +6,20 @@ class Make_post extends CI_Controller{
  parent::__construct();
  
  $this->load->database();
- 
+ $this->load->model('Discover_model');
  $this->load->model('Exhibition_project');
  $this->load->helper('url', 'form');	
  $this->load->library('form_validation');
 
 }          
 function index(){
-    $this->load->view('showcase');
- 
+
+    $result['recommend'] = $this->Discover_model->getRecommend();
+    $result['others'] = $this->Discover_model->getOthers();
+    $result['user'] = $this->Discover_model->getPersonalTrend();
+    $result['trending'] = $this->Discover_model->getTrending();
+    $this->load->view('showcase', $result);
+   
 }
  function do_upload(){
        $config = array(

@@ -24,7 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = '';
+$config['base_url'] = 'http://localhost/projectExhibition/';
+
+
 
 
 /*
@@ -38,10 +40,10 @@ $config['base_url'] = '';
 |
 */
 
-$config['index_page'] = 'index.php';
 $config['fonts_path']= "./system/fonts/font/";
 
-
+$config['index_page'] = '';
+$config['fonts_path']= "./system/fonts/font/";
 
 /*
 |--------------------------------------------------------------------------
