@@ -89,46 +89,38 @@
     </div>
   
 
-        <div class="side-nav w-25  shadow p-5 rounded bg-light ">
-             <div class="leading-project w-75 m-auto h-25 bg-body shadow bg-ligh rounded-3 ">
-                 <p>Online Exam system</p>
- 
-             </div>
+       <div class="side-nav w-25  shadow p-5 rounded bg-light">
+            <div class="leading-project w-75 m-auto h-25 bg-body shadow bg-ligh rounded-3 ">
+                <p>Online Exam system</p>
 
-             <div class="recent">
-                 <h3>Leading Activities</h3>
-
-                 <div class="leading-content">
-                     <p>Amogi coders</p>
-                 </div>
-
-                 <div class="leading-content">
-                     <p>Amogi coders</p>
-                 </div>
-
-                 <div class="leading-content">
-                     <p>Amogi coders</p>
-                 </div>
-
-             </div>
-
-             <div class="trending">
-                 <h3>Trending</h3>
-
-                 <div class="trending-content">
-                     <p>Ineza jost</p>
-                 </div> 
-
-                 <div class="trending-content">
-                      <p>Ineza jost</p>
-                    </div>
-                    
-                    <div class="trending-content">
-                       <p>Ineza jost</p>
-                            </div> 
-                
             </div>
-              
+            <div class="recent">
+                <h3>Leading Activities</h3>
+                <div class="leading-content">
+                    <p>Amogi coders</p>
+                </div>
+                <div class="leading-content">
+                    <p>Amogi coders</p>
+                </div>
+                <div class="leading-content">
+                    <p>Amogi coders</p>
+                </div>
+            </div>
+            <div class="trending">
+                <span>
+                    <img src="<?= base_url('assets/images/Ok-bro.png')?>" alt="">
+                </span>
+                <h3>Trending</h3>
+                <div class="trending-content">
+                    <p>Ineza jost</p>
+                </div> <div class="trending-content">
+                    <p>Ineza jost</p>
+                </div> 
+                <div class="trending-content">
+                    <p>Ineza jost</p>
+                </div>
+            </div>
+        </div>
        
     </div>
     <div class="more">

@@ -13,6 +13,15 @@
             margin: auto;
 
         }
+        .preview{
+            width: 4em;
+            height: 4em;
+        }
+        .preview img {
+            height: 80%;
+            width: 80%;
+            margin-top: .5em;
+        }
     </style>
     <title>Document</title>
 </head>
@@ -103,7 +112,10 @@
             </div>
             <div class="recent">
                 <h3>Leading Activities</h3>
-                <div class="leading-content">
+                <div class="leading-content d-flex flex-row">
+                    <div class="bg-white preview rounded-circle text-center">
+                       <img  src="<?= base_url('assets/images/Ok-bro.png')?>" alt="">
+    </div>
                     <p>Amogi coders</p>
                 </div>
                 <div class="leading-content">
