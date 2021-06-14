@@ -37,7 +37,7 @@
         <div class="d-flex flex-row" id="navBar">
         
              <div>
-                  <a class="nav-link text-dark" aria-current="page" href="../Welcome"><i class="fas fa-list-alt"></i> &nbsp;    Dashboard</a>
+                  <a class="nav-link text-dark" aria-current="page" href="dashboard"><i class="fas fa-list-alt"></i> &nbsp;    Dashboard</a>
              </div>
             <div>
                 <a class="nav-link  text-dark " href="#"> <i class="fas fa-search-location"></i> &nbsp;Discover</a>
@@ -68,7 +68,7 @@
         <div class="form-holder shadow p-5 bg-light rounded ">
             <h1 class="text-center">Showcase <span class="text-primary">your</span> project</h1>
            
-            <form method="POST" action="<?=base_url('image-upload')?>" enctype="multipart/form-data">
+            <form method="POST"class="py-5" action="<?=base_url('image-upload')?>" enctype="multipart/form-data">
 
                 <div class="mb-3">
                     <label for="project-title">Project title</label>
