@@ -41,7 +41,7 @@ class UserModel extends CI_Model{
 				$hashed = hash("SHA512", $password);
 
 				if($dbPass == $hashed){
-					return true;
+					return $row;
 				}else{
 					return false;
 				}

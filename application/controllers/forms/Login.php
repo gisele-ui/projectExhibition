@@ -33,8 +33,9 @@ class Login extends CI_Controller {
 		    $result = $login->authUser($this->input->post('email'), $this->input->post('password'));
 
 			if($result){
-				$_SESSION['userId'] = $result;
-				redirect("home");
+				$_SESSION['userId'] = $result->userId;
+				$_SESSION['classId'] = $result->classId;
+				redirect("index.php/discover");
 			}else{
 				$this->message = "Incorrect email or password";
 				$this->login();

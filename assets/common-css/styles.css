@@ -1,0 +1,77 @@
+/* side bar css */
+body{
+    font-family: "SegoeUI";
+}
+.active {
+    border-bottom: 2px solid #1F43A7;
+}
+
+.right-sidebar {
+background: #F7F6F6;
+height: 100%;
+}
+.relation-div{
+height: 10%;
+width: 90%;
+margin: 40px auto;
+}
+.trend-header{
+width: 80%;
+margin: 0 auto;
+}
+.list-group-img {
+display: flex;
+}
+
+.list-group-img img {
+margin: 0 5px;
+height: 40px;
+width: 40px;
+border-radius: 50%;
+}
+.list-group-item {
+background-color: transparent;
+}
+
+.username {
+font-size: 14px;
+}
+
+.projectName {
+padding: 0 2px;
+font-size: 12px;
+color: grey;
+}
+
+.card-text a {
+color: black;
+text-decoration: none;
+
+
+}
+.fa-heart, .likes{
+color: red;
+font-size: 14px;
+padding: 0 3px;
+}
+.fa-users , .followers{
+color: green;
+font-size: 14px;
+padding: 0 3px;
+}
+.relations{
+display: flex;
+justify-content: space-around;
+}
+.relation-div{
+height: 10%;
+width: 90%;
+margin: 40px auto;
+}
+.recent-card{
+    width: 70% ;
+}
+
+.side-list li{
+    font-size: 14px;
+}
