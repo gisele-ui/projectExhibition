@@ -23,7 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+
 $config['base_url'] = 'http://localhost/projectExhibition/';
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +43,7 @@ $config['base_url'] = 'http://localhost/projectExhibition/';
 $config['fonts_path']= "./system/fonts/font/";
 
 $config['index_page'] = '';
+$config['fonts_path']= "./system/fonts/font/";
 
 /*
 |--------------------------------------------------------------------------

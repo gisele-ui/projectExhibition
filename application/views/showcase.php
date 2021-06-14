@@ -22,7 +22,15 @@
       font-size: 16px;
       font-family: roboto;
     }
-
+        .preview{
+            width: 4em;
+            height: 4em;
+        }
+        .preview img {
+            height: 80%;
+            width: 80%;
+            margin-top: .5em;
+        }
     </style>
     <title>Document</title>
 </head>
