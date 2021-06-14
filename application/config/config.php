@@ -23,7 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+<<<<<<< HEAD
 $config['base_url'] = '';
+=======
+$config['base_url'] = 'http://localhost/projectExh/exhibition/';
+>>>>>>> 2a919f58905f44e8f9dd7aafd9cfef7918569a45
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +39,13 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
+<<<<<<< HEAD
 $config['index_page'] = 'index.php';
 $config['fonts_path']= "./system/fonts/font/";
+=======
+$config['index_page'] = '';
+
+>>>>>>> 2a919f58905f44e8f9dd7aafd9cfef7918569a45
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL
