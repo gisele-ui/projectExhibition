@@ -56,7 +56,6 @@ $route['translate_uri_dashes'] = FALSE;
 $route['image-upload'] = "Make_post/do_upload";
 $route['exhibit'] = 'Make_post';
 $route['dashboard'] = 'Welcome';
-
 $route['register']['GET'] = "forms/Register/register";
 $route['login']['GET'] = "forms/Login/login";
 $route['register']['POST']= "forms/Register/saveUser";

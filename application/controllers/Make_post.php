@@ -37,17 +37,14 @@ $this->load->library('upload', $config);
      $description = $this->input->post('summary');
 
     //  $this->Exhibition_project->saveProject($title, $base, $description, $fileName);
-
   $pdf = new PDF('amen');
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',30);
 
 $pdf->Cell(0,10, $title ,30,1);
- $pdf->Image('assets\images\Ok-bro.png',10,30,200);
+ $pdf->Image('uploads/'.$fileName,10,30,170);
 $pdf->Output();
-
-      
 
            }
  }
