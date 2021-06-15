@@ -22,13 +22,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
     }
 
     .navbar {
-      height: 55px;
+      height: 50px;
     }
 
     .nav-link {
       color: black;
       font-size: 16px;
       font-family: roboto;
+      padding: 10px auto;
     }
 
     .user-card{
@@ -175,16 +176,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <a class="nav-link text-dark" href="dashboard"><i class="fas fa-list-alt"></i> &nbsp;    Dashboard</a>
          </div>
         <div>
-            <a class="nav-link  text-dark active" aria-current="page" href="discover"> <i class="fas fa-search-location "></i> &nbsp;Discover</a>
+            <a class="nav-link text-dark active" href="discover" aria-current="page"> <i class="fas fa-search-location "></i> &nbsp;Discover</a>
 
         </div>
         <div> 
 
-            <a class="nav-link  text-dark " href="#">   <i class="fas fa-fire"></i> &nbsp; Trending</a>
+            <a class="nav-link text-dark" href="trending" > <i class="fas fa-fire"></i> &nbsp; Trending</a>
         </div>
         <div>
 
-            <a class="nav-link  text-dark " href="#" tabindex="-1"> <i class="fas fa-cogs"></i>  &nbsp;Settings</a>
+            <a class="nav-link text-dark " href="#" tabindex="-1"> <i class="fas fa-cogs"></i>  &nbsp;Settings</a>
         </div>
      
 
@@ -209,12 +210,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="recommend">
           <?php 
           if($recommend){
-          foreach ($recommend as $row1) {?>
+          foreach ($recommend as $row) {?>
             <div class="card user-card shadow">
               <img src="<?php echo base_url('assets/images/again.jpeg') ?>" class="card-img-top" alt="my pic">
               <div class="card-body">
-                <p href="#" class="card-text text-center fw-bold"><a href="#"><?= $row1->username?></a></p>
-                <h6 class="date-added card-text text-center">Joined on <?= $row1->added_time ?></h6>
+                <p href="#" class="card-text text-center fw-bold"><a href="?userId=<?=$row->userId?>"><?= $row->username?></a></p>
+                <h6 class="date-added card-text text-center">Joined on <?= $row->added_time ?></h6>
                 <div class="mx-auto col-4"><a href="#" role="button" class="btn btn-primary btn-sm mx-auto">Follow</a></div>
               </div>
             </div>
@@ -285,7 +286,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <span class="list-group-img">
                   <img src="<?php echo base_url('assets/images/again.jpeg') ?>" alt="">
                   <div>
-                    <span class="username fw-bold"><?= $row->description ?></span>
+                    <span class="username text-decoration-none text-dark fw-bold text-capitalize"><?= $row->description ?></span>
                     <p class="projectName">by <?= $row->username ?></p>
                   </div>
                 </span>
