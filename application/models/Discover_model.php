@@ -27,7 +27,7 @@ class Discover_model extends CI_Model {
 	}
 	public function getTrending(){
 		$userId= $_SESSION['userId'];
-		$query = $this->db->query("SELECT u.username, p.description,p.likes from posts p inner join users u on u.userId = p.userId order by likes desc");
+		$query = $this->db->query("SELECT u.username, p.description,p.likes,u.userId, p.title from posts p inner join users u on u.userId = p.userId order by likes desc");
 		return $query->result();
 	}
 }
