@@ -10,12 +10,16 @@ class Discover extends CI_Controller {
 
 	public function index()
 	{
+		if(isset($_SESSION['userId'])){
+			$result['recommend'] = $this->Discover_model->getRecommend();
+			$result['others'] = $this->Discover_model->getOthers();
+			$result['user'] = $this->Discover_model->getPersonalTrend();
+			$result['trending'] = $this->Discover_model->getTrending();
+			$this->load->view('discover_view', $result);
+		}else{
+			redirect("/forms/login/login");
+		}
 		
-		$result['recommend'] = $this->Discover_model->getRecommend();
-		$result['others'] = $this->Discover_model->getOthers();
-		$result['user'] = $this->Discover_model->getPersonalTrend();
-		$result['trending'] = $this->Discover_model->getTrending();
-		$this->load->view('discover_view', $result);
 	}
 	
 }
