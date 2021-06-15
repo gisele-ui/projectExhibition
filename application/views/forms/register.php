@@ -68,7 +68,7 @@
 	<div class="form-cont col-xl-4 float-end">
 		<h3 class="fw-bold fst-italic text-center my-4 mb-5">Sign Up</h3>
 
-		<form action="<?= base_url("index.php/forms/register/saveUser") ?>" method="POST">
+		<form action="<?= base_url("forms/register/saveUser") ?>" method="POST">
 
 			<div class="form-floating input-group">
 				<span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
