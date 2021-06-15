@@ -23,13 +23,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
     }
 
     .navbar {
-      height: 55px;
+      height: 50px;
     }
 
     .nav-link {
       color: black;
       font-size: 16px;
       font-family: roboto;
+      padding: 10px auto;
     }
 
     .user-card {
@@ -274,7 +275,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <span class="list-group-img">
                   <img src="<?php echo base_url('assets/images/again.jpeg') ?>" alt="">
                   <div>
-                    <span class="username fw-bold"><?= $row->description ?></span>
+                    <span class="username text-decoration-none text-dark fw-bold text-capitalize"><?= $row->description ?></span>
                     <p class="projectName">by <?= $row->username ?></p>
                   </div>
                 </span>

@@ -10,10 +10,154 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
-        .text h1 {
+    .text h1 {
             margin-top: 1.2em;
             font-size: 6em;
             line-height: 1em;
+        }
+        .form-holder{
+        width: 70%;
+        margin: auto;
+
+    }
+    body {
+            font-family: "SegoeUI";
+        }
+
+        .active {
+            border-bottom: 2px solid #1F43A7;
+        }
+
+        .navbar {
+            height: 50px;
+        }
+
+        .nav-link {
+            color: black;
+            font-size: 16px;
+            font-family: roboto;
+            padding: 10px auto;
+        }
+
+        .user-card {
+            width: 210px;
+            height: 190px;
+            border: none;
+            margin: 20px;
+        }
+
+        .user-card img {
+            border-radius: 10px;
+            width: 40%;
+            height: 40%;
+            margin: 0 auto;
+            object-fit: cover;
+            position: relative;
+            top: -20px;
+        }
+
+        .cart .cart-text {
+            text-align: center;
+        }
+
+        .date-added {
+            color: grey;
+            font-size: 12px;
+        }
+
+        .main-container .content-container {
+            margin: 0 auto;
+            border: 1px solid whitesmoke;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        .main-container .content-container .content-header {
+            padding: 25px;
+        }
+
+        .recommend,
+        .others {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+
+        .category-header {
+            font-size: 20px;
+            padding: 60px;
+            font-weight: bold;
+        }
+
+        .search {
+            width: 50%;
+            margin-bottom: auto;
+            margin-top: 20px;
+            height: 50px;
+            background: whitesmoke;
+            padding: 10px;
+            border-radius: 5px
+        }
+
+        .search-input {
+            color: white;
+            border: 0;
+            outline: 0;
+            background: none;
+            width: 0;
+            margin-top: 5px;
+            line-height: 20px;
+        }
+
+        .search .search-input {
+            padding: 0 10px;
+            width: 100%;
+            caret-color: #536bf6;
+            font-size: 19px;
+            font-weight: 300;
+            color: black;
+            transition: width 0.4s linear
+        }
+
+        .search-icon {
+            height: 34px;
+            width: 34px;
+            float: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-color: #1F43A7;
+            font-size: 10px;
+            bottom: 30px;
+            position: relative;
+            border-radius: 5px
+        }
+
+        .main {
+            display: flex;
+        }
+
+
+        .list-group-item {
+            background-color: transparent;
+        }
+
+        .nav-item {
+            height: 100%;
+        }
+
+        .navbar-nav,
+        .navbar-collapse {
+            height: 100%;
+        }
+
+        .relation-div {
+            height: 10%;
+            width: 90%;
+            margin: 40px auto;
         }
     </style>
 </head>
@@ -33,15 +177,14 @@
         <div class="d-flex flex-row" id="navBar">
         
              <div>
-                  <a class="nav-link active" aria-current="page" href="dashboard"><i class="fas fa-list-alt"></i> &nbsp;    Dashboard</a>
+                  <a class="nav-link" href="dashboard active" aria-current="page"><i class="fas fa-list-alt"></i> &nbsp;Dashboard</a>
              </div>
             <div>
-                <a class="nav-link  text-dark " href="discover"> <i class="fas fa-search-location"></i> &nbsp;Discover</a>
+                <a class="nav-link text-dark" href="discover"> <i class="fas fa-search-location"></i> &nbsp;Discover</a>
 
             </div>
             <div> 
-
-                <a class="nav-link  text-dark " href="#">   <i class="fas fa-fire"></i> &nbsp; Trending</a>
+                <a class="nav-link  text-dark " href="trending">   <i class="fas fa-fire"></i> &nbsp; Trending</a>
             </div>
             <div>
 
@@ -105,19 +248,19 @@
         <?php }?>
         <div class="trending">
           <h2 class="trend-header fs-5 fw-bold">Recent Activities</h2>
-          <div class="card recent-card shadow-sm">
-            <ul class="list-group list-group-flush ">
-              
-                <li class="list-group-item border-0 fw-bold">
-                 
-                   <i class="text-danger fas fa-fire"></i> Amogi Coders is firing
-                </li>
-                <li class="list-group-item border-0 fw-bold">
-                <i class="fa fa-calendar-o text-success" aria-hidden="true"></i> Today's posts: 4
-                </li>
-                <li class="list-group-item border-0 fw-bold text-warning">
+          <div class="card recent-card shadow-sm w-75 my-5 mx-auto">
+            <ul class="list-group side-list list-group-flush">
+
+              <li class="list-group-item border-0 fw-bold">
+
+                <i class="text-danger fas fa-fire"></i> Amogi Coders is firing
+              </li>
+              <li class="list-group-item border-0 fw-bold">
+                Today's posts: 4
+              </li>
+              <li class="list-group-item border-0 fw-bold text-warning">
                 <i class="fas fa-crown text-warning"></i> GOAT : Belyse
-                </li>
+              </li>
             </ul>
           </div>
         </div>
@@ -127,9 +270,9 @@
             <?php foreach ($trending as $row) { ?>
               <li class="list-group-item border-0">
                 <span class="list-group-img">
-                  <img src="<?= base_url('assets/images/again.jpeg') ?>" alt="">
+                  <img src="<?php echo base_url('assets/images/again.jpeg') ?>" alt="">
                   <div>
-                    <span class="username fw-bold"><?= $row->description ?></span>
+                    <span class="username text-decoration-none text-dark fw-bold text-capitalize"><?= $row->description ?></span>
                     <p class="projectName">by <?= $row->username ?></p>
                   </div>
                 </span>
@@ -142,7 +285,7 @@
        
     </div>
     <div class="more">
-
+     
     </div>
 
 </body>

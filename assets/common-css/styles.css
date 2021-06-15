@@ -5,10 +5,14 @@ body{
 .active {
     border-bottom: 2px solid #1F43A7;
 }
+.navbar{
+    overflow: auto;
+}
 
 .right-sidebar {
 background: #F7F6F6;
-height: 100%;
+
+
 }
 .relation-div{
 height: 10%;
@@ -75,3 +79,4 @@ margin: 40px auto;
 .side-list li{
     font-size: 14px;
 }
+

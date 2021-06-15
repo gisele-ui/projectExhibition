@@ -22,13 +22,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
     }
 
     .navbar {
-      height: 55px;
+      height: 50px;
     }
 
     .nav-link {
       color: black;
       font-size: 16px;
       font-family: roboto;
+      padding: 10px auto;
     }
 
     .user-card{
@@ -175,16 +176,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <a class="nav-link text-dark" href="dashboard"><i class="fas fa-list-alt"></i> &nbsp;    Dashboard</a>
          </div>
         <div>
-            <a class="nav-link  text-dark active" aria-current="page" href="discover"> <i class="fas fa-search-location "></i> &nbsp;Discover</a>
+            <a class="nav-link text-dark active" href="discover" aria-current="page"> <i class="fas fa-search-location "></i> &nbsp;Discover</a>
 
         </div>
         <div> 
 
-            <a class="nav-link  text-dark " href="trending>   <i class="fas fa-fire"></i> &nbsp; Trending</a>
+            <a class="nav-link text-dark" href="trending" > <i class="fas fa-fire"></i> &nbsp; Trending</a>
         </div>
         <div>
 
-            <a class="nav-link  text-dark " href="#" tabindex="-1"> <i class="fas fa-cogs"></i>  &nbsp;Settings</a>
+            <a class="nav-link text-dark " href="#" tabindex="-1"> <i class="fas fa-cogs"></i>  &nbsp;Settings</a>
         </div>
      
 
@@ -285,7 +286,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <span class="list-group-img">
                   <img src="<?php echo base_url('assets/images/again.jpeg') ?>" alt="">
                   <div>
-                    <span class="username fw-bold"><?= $row->description ?></span>
+                    <span class="username text-decoration-none text-dark fw-bold text-capitalize"><?= $row->description ?></span>
                     <p class="projectName">by <?= $row->username ?></p>
                   </div>
                 </span>

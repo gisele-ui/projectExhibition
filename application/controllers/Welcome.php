@@ -20,10 +20,20 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+<<<<<<< HEAD
+=======
+		if(isset($_SESSION['userId'])){
+>>>>>>> cbe645b6453aa23c9c26d5b74cd920f54ffb3e86
 		$this->load->model('Discover_model');
 		$result['user'] = $this->Discover_model->getPersonalTrend();
 		$result['trending'] = $this->Discover_model->getTrending();
 		$this->load->view('dashboard', $result);
+<<<<<<< HEAD
 
+=======
+		}else{
+			redirect("index.php/forms/login/login");
+		}
+>>>>>>> cbe645b6453aa23c9c26d5b74cd920f54ffb3e86
 	}
 }

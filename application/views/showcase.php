@@ -21,6 +21,7 @@
       color: black;
       font-size: 16px;
       font-family: roboto;
+      padding: 10px auto;
     }
         /* .preview{
             width: 4em;
@@ -155,7 +156,7 @@
                 <span class="list-group-img">
                   <img src="<?php echo base_url('assets/images/again.jpeg') ?>" alt="">
                   <div>
-                    <span class="username fw-bold"><?= $row->description ?></span>
+                    <span class="username text-decoration-none text-dark fw-bold text-capitalize"><?= $row->description ?></span>
                     <p class="projectName">by <?= $row->username ?></p>
                   </div>
                 </span>
