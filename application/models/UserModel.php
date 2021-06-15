@@ -21,7 +21,11 @@ class UserModel extends CI_Model{
 		if($isValid->num_rows()>0){
 			$userId = $isValid->result()[0]->userId;
 			$verified = $this->db->query("update users set verified = '1' where userId = $userId");
+<<<<<<< HEAD
+			if($verified){	
+=======
 			if($verified){
+>>>>>>> 44c3edf01aa689d99385bba47da695b6ccf94eac
 				$this->db->query("update users set link = '' where userId = $userId");
 				return $isValid->result();
 			}
@@ -41,7 +45,11 @@ class UserModel extends CI_Model{
 				$hashed = hash("SHA512", $password);
 
 				if($dbPass == $hashed){
+<<<<<<< HEAD
+					return true;
+=======
 					return $row;
+>>>>>>> 44c3edf01aa689d99385bba47da695b6ccf94eac
 				}else{
 					return false;
 				}
@@ -51,6 +59,31 @@ class UserModel extends CI_Model{
 		}
 	}
 
+<<<<<<< HEAD
+	function display_records()
+	{
+	$query=$this->db->query("select * from users");
+	return $query->result();
+	}
+
+        function displayrecordsById($id)
+	{
+	$query=$this->db->query("select * from users where userId='".$id."'");
+	return $query->result();
+	}
+	/*Update*/
+	function update_records($id,$username,$email,$Bio,$photo)
+	{
+	$query=$this->db->query("update users SET username='$username',email='$email',Bio='$Bio' , filename='$photo' where userId='$id'");
+	}
+
+    function deleterecords($id)
+    {
+        $query=$this->db->query("DELETE from users where userId='$id'");
+      return true;
+    }
+=======
+>>>>>>> 44c3edf01aa689d99385bba47da695b6ccf94eac
 }
 
 ?>

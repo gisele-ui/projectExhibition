@@ -31,6 +31,7 @@
             height: 80%;
             width: 80%;
             margin-top: .5em;
+        }
         } */
     </style>
     <title>Document</title>

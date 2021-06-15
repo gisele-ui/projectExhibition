@@ -42,7 +42,6 @@ $this->load->library('upload', $config);
      $description = $this->input->post('summary');
 
      $this->Exhibition_project->saveProject($title, $base, $description, $fileName);
-     redirect('welcome');
 
 //   $pdf = new PDF('amen');
 // $pdf->AliasNbPages();

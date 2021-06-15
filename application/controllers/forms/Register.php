@@ -8,6 +8,7 @@ class Register extends CI_Controller {
 		parent:: __construct();
         $this->load->helper('form');
         $this->load->helper('url');
+		$this->load->database();
 		$this->load->model("UserModel");
 	}
 
@@ -18,7 +19,7 @@ class Register extends CI_Controller {
 		$result = $info->getData();
 		$results['result'] = $result;
 
-		$this->load->view('forms/register', $results);
+		$this->load->view('forms/Register', $results);
 	}
 
 	
@@ -36,7 +37,7 @@ class Register extends CI_Controller {
 		$code = bin2hex(random_bytes(6));
 		$hashedemail  =hash("SHA512", $this->input->post("email"));
 		$identity = $hashedemail."-".$code;
-		$link = "http://localhost/exhibition/index.php/forms/register/verify/$identity";
+		$link = "http://localhost/projectExh/exhibition/verify/$identity";
         $subject = "Email verification link";
         $message = "<div><p>Hi $username, click to this link to verify your email and get started.</p><a href='$link'>$link</a></div>";
 		

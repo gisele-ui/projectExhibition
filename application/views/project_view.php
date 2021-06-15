@@ -78,7 +78,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
       flex-wrap: wrap;
     }
 
-
     .category-header {
       font-size: 20px;
       padding: 60px;
