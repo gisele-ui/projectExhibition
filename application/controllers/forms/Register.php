@@ -8,6 +8,7 @@ class Register extends CI_Controller {
 		parent:: __construct();
         $this->load->helper('form');
         $this->load->helper('url');
+		$this->load->database();
 		$this->load->model("UserModel");
 	}
 
@@ -18,7 +19,7 @@ class Register extends CI_Controller {
 		$result = $info->getData();
 		$results['result'] = $result;
 
-		$this->load->view('forms/register', $results);
+		$this->load->view('forms/Register', $results);
 	}
 
 	
@@ -36,7 +37,7 @@ class Register extends CI_Controller {
 		$code = bin2hex(random_bytes(6));
 		$hashedemail  =hash("SHA512", $this->input->post("email"));
 		$identity = $hashedemail."-".$code;
-		$link = "http://localhost/exhibition/index.php/forms/register/verify/$identity";
+		$link = "http://localhost/projectExh/exhibition/verify/$identity";
         $subject = "Email verification link";
         $message = "<div><p>Hi $username, click to this link to verify your email and get started.</p><a href='$link'>$link</a></div>";
 		
@@ -82,14 +83,57 @@ class Register extends CI_Controller {
 	    $isValid = $check->checkLink($link);
 		
 		if($isValid){
-			$newdata = array(
-				'userId' => $isValid[0]->userId,
-				'classId' => $isValid[0] ->classId
-			);
-		$this->session->set_userdata($newdata);
-		redirect("discover");
+        $_SESSION['userId'] = $isValid[0]->userId;
+		redirect("home");
 		}else{
          echo "Page not found";
 		}
 	}
+
+	public function displaydata()
+		{
+			$result['data']=$this->UserModel->display_records();
+			$this->load->view('listUsers',$result);
+		}
+
+	public function dispdata()
+	{
+		$id=$_SESSION['userId'];
+	$result['data']=$this->UserModel->display_records();
+	$this->load->view('listUsers',$result);
+	}
+	public function updatedata()
+	{
+		$id=$_SESSION['userId'];
+	$result['data']=$this->UserModel->displayrecordsById($id);
+	$this->load->view('updateUser',$result);
+	$config = array(
+		'upload_path' => "./uploads/",
+		'allowed_types' => "gif|jpg|jpeg|pdf",
+		'overwrite' => TRUE
+		
+		);
+		if($this->input->post('update')){
+		$username=$this->input->post('username');
+		$email=$this->input->post('email');
+		$classId=$this->input->post('classId');
+		$Bio=$this->input->post('Bio');
+		$photo=$this->input->post('filename');
+		$this->UserModel->update_records($id,$username,$email,$Bio,$photo);
+		echo "Date updated successfully !";
+		}
+		}
+
+		public function deletedata()
+{
+  $id=$_SESSION['userId'];
+  $response=$this->UserModel->deleterecords($id);
+  if($response==true){
+    echo "Data deleted successfully !";
+}
+  else{
+    echo "Error !";
+  }
+}
+
 }

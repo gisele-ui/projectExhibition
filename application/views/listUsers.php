@@ -10,8 +10,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</head>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+  </head>
 <style>
  
   .nav{
@@ -84,6 +86,9 @@ float: right;
 .likes ul li{
 margin-top: 20px;
   padding: 10px;
+}
+#myTable{
+  margin-left:80px;
 }
 .one{
   width: 30%;
@@ -160,25 +165,43 @@ i{
 }
 </style>
 <body>
-<?php
-  $i=1;
-  foreach($data as $row)
-  {
-  ?>
-  <div class="nav">
-    <ul>
-      <li><a href="user2.php">Co-EXHI</a></li>
-      <li><a href="user2.php">Dashboard</a></li>
-      <li><a href="outgoing_bk.php">Discover</a></li>
-      <li><a href="inventory_bk.php">Trending</a></li>
-      <li><a href="index.php">settings</a></li>
-      <li>
-          <button class="btn btn-primary btn-lg btn-block w-25 p-7 text-white" id="exhibit">Exhibit</button>
-      </li>
-       <li><i class="fa fa-user-circle" aria-hidden="true"></i><i class="arrow left"></i></li>
-     
-    </ul>
-  </div>
+
+      <nav class="navbar navbar-light  shadow-sm bg-body rounded ">
+        <div class="d-flex justify-content-around w-100">
+        <div class="logo">
+            <a href="#" class="navbar-brand">
+            <img src="<?php echo base_url('/assets/images/iconfinder_1851816_agent_exhibition_gallery_model_property_icon_512px.png')?>" class="logo" width="30">
+            co-exhi
+            </a>
+        </div>
+        <div class="d-flex flex-row" id="navBar">
+        
+             <div>
+                  <a class="nav-link text-dark" aria-current="page" href="dashboard"><i class="fas fa-list-alt"></i> &nbsp;    Dashboard</a>
+             </div>
+            <div>
+                <a class="nav-link  text-dark " href="discover"> <i class="fas fa-search-location"></i> &nbsp;Discover</a>
+
+            </div>
+            <div> 
+
+                <a class="nav-link  text-dark " href="#">   <i class="fas fa-fire"></i> &nbsp; Trending</a>
+            </div>
+            <div>
+
+                <a class="nav-link  text-dark " href="#" tabindex="-1"> <i class="fas fa-cogs"></i>  &nbsp;Settings</a>
+            </div>
+       
+
+        </div>
+        <div class="buttons">
+            <button class="btn btn-info text-white">Exhibit</button>
+            <div></div>
+        </div>
+        </div>
+
+      
+</nav>
   <div class="amogi">
     <div class="likes">
 <ul>
@@ -216,14 +239,13 @@ i{
     </div>
  
 </div>
-<div class="one">
-</div>
+
   
 <hr>
-<div class="form">
 
-   <table width="600" border="1" cellspacing="5" cellpadding="5" >
-  <tr style="background:#CCC" >
+<table class="table table-striped table-bordered dt-responsive nowrap" id="myTable" style="width:50%">
+        <thead>
+        <tr style="background:#CCC" >
     <th>username</th>
     <th>email</th>
     <th>Bio</th>
@@ -239,17 +261,16 @@ i{
   echo "<td>".$row->username."</td>";
   echo "<td>".$row->email."</td>";
   echo "<td>".$row->Bio."</td>";
-//   echo "<td>".$row->classId."</td>";
   echo "<td><a href=updatedata?userId=".$row->userId.">Update</a></td>";
   echo "<td><a href='deletedata?userId=".$row->userId."'>Delete</a></td>";
   echo "</tr>";
   $i++;
   }
    ?>
-</table>
-<?php } ?>
-</div>
-
+        </tbody>
+    </table>
+    <script>$(document).ready( function () {
+        $('#myTable')
 
 
 <!-- <div class="projects">
