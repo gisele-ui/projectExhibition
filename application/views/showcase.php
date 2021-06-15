@@ -22,7 +22,7 @@
       font-size: 16px;
       font-family: roboto;
     }
-        .preview{
+        /* .preview{
             width: 4em;
             height: 4em;
         }
@@ -30,7 +30,7 @@
             height: 80%;
             width: 80%;
             margin-top: .5em;
-        }
+        } */
     </style>
     <title>Document</title>
 </head>
@@ -74,7 +74,9 @@
       
 </nav>
     </header>
+
     <div class="content d-flex bg-body col-sm-12">
+
   <div class=" p-5 col-sm-10">
         <div class="form-holder shadow p-5 bg-light rounded ">
             <h1 class="text-center">Showcase <span class="text-primary">your</span> project</h1>
@@ -83,11 +85,11 @@
 
                 <div class="mb-3">
                     <label for="project-title">Project title</label>
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="title" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label for="">Project base</label>
-                    <select name="project_base" id="" class="form-select">
+                    <select name="project_base" class="form-select" required>
                         <option value="1">Web Development</option>
                         <option value="2">Designer</option>
                         <option value="3">Game Developer</option>
@@ -96,17 +98,19 @@
                 </div>
                 <div class="mb-3">
                     <label for="summary">Summary</label>
-                    <input type="text" name="summary" class="form-control">
+                    <input type="text" name="summary" class="form-control" required>
                 </div>
                
                 <div class="mb-3">
                     <label for="file">Upload project file</label>
-                    <input type="file" name="project_file" class="form-control">
+                    <input type="file" name="project_file" class="form-control" accept="image/*" required>
                 </div>
                 <input name="save" type="submit" class="btn btn-info text-white" value="Make a post">
             </form>
         </div>
+
     </div>
+
     <div class="col-sm-2">
       <div class="right-sidebar d-flex flex-column">
         <?php foreach($user as $details){?>

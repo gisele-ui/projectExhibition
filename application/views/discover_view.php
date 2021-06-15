@@ -180,7 +180,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
         <div> 
 
-            <a class="nav-link  text-dark " href="#">   <i class="fas fa-fire"></i> &nbsp; Trending</a>
+            <a class="nav-link  text-dark " href="trending>   <i class="fas fa-fire"></i> &nbsp; Trending</a>
         </div>
         <div>
 
@@ -209,12 +209,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="recommend">
           <?php 
           if($recommend){
-          foreach ($recommend as $row1) {?>
+          foreach ($recommend as $row) {?>
             <div class="card user-card shadow">
               <img src="<?php echo base_url('assets/images/again.jpeg') ?>" class="card-img-top" alt="my pic">
               <div class="card-body">
-                <p href="#" class="card-text text-center fw-bold"><a href="#"><?= $row1->username?></a></p>
-                <h6 class="date-added card-text text-center">Joined on <?= $row1->added_time ?></h6>
+                <p href="#" class="card-text text-center fw-bold"><a href="?userId=<?=$row->userId?>"><?= $row->username?></a></p>
+                <h6 class="date-added card-text text-center">Joined on <?= $row->added_time ?></h6>
                 <div class="mx-auto col-4"><a href="#" role="button" class="btn btn-primary btn-sm mx-auto">Follow</a></div>
               </div>
             </div>
